@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Spreadsheet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="toolbar">
+        <div class="toolbar-section">
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fas fa-calculator"></i> Math</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="sum()">SUM</a>
+                    <a href="#" onclick="average()">AVERAGE</a>
+                    <a href="#" onclick="max()">MAX</a>
+                    <a href="#" onclick="min()">MIN</a>
+                    <a href="#" onclick="count()">COUNT</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fas fa-text-width"></i> Text</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="trim()">TRIM</a>
+                    <a href="#" onclick="toUpper()">UPPER</a>
+                    <a href="#" onclick="toLower()">LOWER</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fas fa-search"></i> Find</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="findAndReplace()">Find & Replace</a>
+                    <a href="#" onclick="removeDuplicates()">Remove Duplicates</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fas fa-chart-bar"></i> Charts</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="createChart('bar')">Bar Chart</a>
+                    <a href="#" onclick="createChart('line')">Line Chart</a>
+                    <a href="#" onclick="createChart('pie')">Pie Chart</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fas fa-save"></i> File</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="save()">Save</a>
+                    <a href="#" onclick="load()">Load</a>
+                    <a href="#" onclick="exportCSV()">Export CSV</a>
+                    <a href="#" onclick="importCSV()">Import CSV</a>
+                </div>
+            </div>
+            <button class="toolbar-btn" onclick="addRow()"><i class="fas fa-plus"></i> Add Row</button>
+            <button class="toolbar-btn" onclick="addColumn()"><i class="fas fa-plus"></i> Add Column</button>
+            <button class="toolbar-btn" onclick="deleteRow()"><i class="fas fa-minus"></i> Delete Row</button>
+            <button class="toolbar-btn" onclick="deleteColumn()"><i class="fas fa-minus"></i> Delete Column</button>
+            <button class="toolbar-btn" onclick="toggleBold()"><i class="fas fa-bold"></i> Bold</button>
+            <button class="toolbar-btn" onclick="toggleItalic()"><i class="fas fa-italic"></i> Italic</button>
+        </div>
+    </div>
+    <div id="spreadsheet"></div>
+    <canvas id="chart" width="400" height="200"></canvas>
+    <input type="file" id="csvFileInput" style="display: none;" accept=".csv">
+</body>
+</html>
